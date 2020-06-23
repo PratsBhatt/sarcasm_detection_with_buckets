@@ -13,9 +13,9 @@ except Exception:
           'and paste it in the data folder, download the version 2.')
     sys.exit()
 
-print('maximum length of headline data is ', df.headline.map(len).max())
-print('minimum length of headline data is ', df.headline.map(len).min())
-print('meam of the lengths of the headline data is ', df.headline.map(len).mean())
+print('maximum length of headline data is ', df.headline.str.split(' ').map(len).max())
+print('minimum length of headline data is ', df.headline.str.split(' ').map(len).min())
+print('meam of the lengths of the headline data is ', df.headline.str.split(' ').map(len).mean())
 
 # Set the hyperparametes
 vocab_size = 1000
